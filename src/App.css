@@ -1,25 +1,40 @@
-.box1 {
-  width: 100px;
-  height: 50px;
-  background-color: green;
+.container {
+  width: 250px;
+  margin: 0 auto;
 }
-.box2 {
-  width: 100px;
+.column {
   height: 50px;
-  background-color: red;
+  width: 100%;
 }
-.box3 {
-  width: 100px;
-  height: 50px;
-  background-color: blue;
+.column div {
+  box-sizing:inherit;
+  font-size: 16px;
+  color: #333;
+  font-weight: bold;
+  line-height: 50px;
+  height: 100%;
+  vertical-align: middle;
+  display: inline-block;
 }
-.box4 {
-  width: 100px;
-  height: 50px;
-  background-color: yellow;
+
+.rank {
+  width: 10%;
 }
-.box5 {
-  width: 100px;
-  height: 50px;
-  background-color: darkblue;
+
+.picture {
+  width: 25%;
+}
+
+.display_name {
+  width: 55%;
+}
+
+.score {
+  width: 10%;
+}
+
+.column img {
+  width: 50px;
+  height: 100%;
+  border-radius: 25px;
 }
