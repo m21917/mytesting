@@ -1,26 +1,49 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import anime from 'animejs';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.myRef = React.createRef();
+    this.myRef2 = React.createRef();
+    this.myRef3 = React.createRef();
+    this.myRef4 = React.createRef();
+    this.myRef5 = React.createRef();
+  }
+
+  componentDidMount() {
+    console.log(this.myRef);
+  }
+
+  switchAtoB = (obj1, obj2) => {
+    const moveHeigth = 50;
+    anime({
+      targets: obj1.current,
+      translateY: [0, 50],
+      duration: 500,
+      easing: "easeOutSine"
+    });
+    anime({
+      targets: obj2.current,
+      translateY: [0, -50],
+      duration: 500,
+      easing: "easeOutSine"
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <button type="button" onClick={(a) => this.switchAtoB(this.myRef,this.myRef2)}>switch</button>
+        <div ref={this.myRef} className="box1">1</div>
+        <div ref={this.myRef2} className="box2">2</div>
+        <div ref={this.myRef3} className="box3">3</div>
+        <div ref={this.myRef4} className="box4">4</div>
+        <div ref={this.myRef5} className="box5">5</div>
+      </div>
+    );
+  }
 }
-
 export default App;
